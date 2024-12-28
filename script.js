@@ -3,3 +3,7 @@ function sayHello(){
 }
 
 sayHello();
+
+function sum(a,b){
+    return a + b;
+}
