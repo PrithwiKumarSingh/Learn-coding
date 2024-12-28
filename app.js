@@ -6,11 +6,21 @@ function sayName(){
     console.log('My name is ' + firstName);
 }
 
-sayName();
+// sayName();
 
 function printName(){
     for(let i=0; i<5; i++){
         console.log(firstName);
     }
 }
-printName();
+// printName();
+
+function sumIndex(num){
+    let sum = 0;
+    for(let i=0; i<num.length; i++){
+        sum += num[i] 
+        console.log(sum);
+    }
+}
+
+sumIndex('12345');
