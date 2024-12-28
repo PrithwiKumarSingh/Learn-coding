@@ -6,7 +6,6 @@ function sayName(){
     console.log('My name is ' + name);
 }
 
-<<<<<<< HEAD
 // sayName();
 
 function printName(){
@@ -25,6 +24,4 @@ function sumIndex(num){
 }
 
 sumIndex('12345');
-=======
 sayName();
->>>>>>> parent of e5a0684 (PrintName fn added)
