@@ -4,3 +4,6 @@
  then <git remote -v> for comformation to set the origin main then all set.
 
  after these process <git push -u origin main> for push the all code on our github repository.
+
+
+ <git push -f > to forcefully pushing without any kinds of errors. 

@@ -23,3 +23,10 @@ function calculateDig(a,b, op){
 }
 
 calculateDig(5,3,"*");
+
+function randomDig(){
+    let random = Math.floor(Math.random() * 10) + 1;
+    console.log(random);
+}
+
+randomDig();
