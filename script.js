@@ -29,4 +29,9 @@ function randomDig(){
     console.log(random);
 }
 
-randomDig();
+function generateLoop(n){
+    for(int i=0; i<n; i++){
+        randomDig();
+    }
+generateLoop(10);
+    
