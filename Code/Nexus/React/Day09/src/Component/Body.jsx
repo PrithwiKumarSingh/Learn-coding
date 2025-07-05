@@ -7,9 +7,9 @@ function Body(){
  
    async function generateProfile(count){
 
-      try{    const ran = Math.floor(1 + Math.random() * 10000);
+      try{  const ran = Math.floor(1 + Math.random() * 10000);
             const response = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
-                const users = await response.json();
+            const users = await response.json();
 
     // Fetch detailed profile for each user
     const detailedProfiles = await Promise.all(
@@ -36,7 +36,7 @@ function Body(){
 
 
    useEffect(()=>{
-    generateProfile(30);
+    generateProfile(10);
    },[]);
    
 
@@ -50,7 +50,7 @@ function Body(){
            return (<div key={value.id} className="cards">
               <img src={value.avatar_url}></img>
               <h2>{value.login}</h2>
-            <div className="followopt">
+            <div className="followopt">illustrious-sfogliatella-e058dd
                  <p>👥 Followers: {value.followers}</p>
                  <p>➡️ Following: {value.following}</p>
             </div>
