@@ -1,15 +1,21 @@
 body{
     padding: 0px;
-    margin: opx;
+    /* margin: 0px; */
     box-sizing: border-box;
+    background-color: #0B1D51;
+    
 }
 
 #heading{
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(80, 80, 224);
+    backdrop-filter: blur(10px);
+background: #8CCDEB;
+background: linear-gradient(45deg, rgba(140, 205, 235, 0.364) 16%, rgba(255, 226, 169, 0.233) 48%, rgba(114, 92, 173, 0.604) 78%, rgba(11, 29, 81, 1) 100%);
+    border-radius: 20px;
+
 }
 
 h1{
@@ -34,29 +40,62 @@ img{
 }
 
 .cards{
-    padding: 20px 10px;
+    backdrop-filter: blur(10px);;
+    background-color: #725cad41;
+    padding: 20px 30px;
     text-align: center;
+    color: #ffffff;
     border: 2px black solid;
+    border-radius: 10px;
     margin-left: 20px;
     margin-top: 20px;
+    transition: transform 0.2s ease-in-out;
 }
-
+.cards:hover{
+    transform: scale(1.03);
+    box-shadow: #8CCDEB 0px 2px 10px;
+}
 .but{
     margin-top: 20px;
 }
 
 .inpu{
     margin-left: 40vw;
-    width: 200px;
+    width: 300px;
     height: 40px;
+    text-align: start;
     font-size: 25px;
     padding-left: 2vw;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: #8CCDEB;
 }
 
 button{
     height: 40px;
-    background-color: rgb(119, 119, 224);
-    color: white;
+    background-color: #ffe2a9d8;
+    color: black;
+    font-size: 20px;
+    padding: 5px 10px;
     margin-left: 1vw;
+    border-radius: 10px;
+}
+a{
+    backdrop-filter: blur(10px);
+    background-color: #FFE3A9;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-top: 50px;
+}
 
+.followopt{
+    display: flex;
+    gap: 15px;
+    margin-top: 0px;
+}
+h2{
+    margin-bottom: 0px;
 }
