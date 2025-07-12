@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function Body(){
 
    const [Profile,setProfile] = useState([]);
    const [numberofProfile,setnumberofProfile] = useState("");
+   const [user,setuser] = useState("");
  
-   async function generateProfile(count){
+   const generateProfile = useCallback(async(count)=>{
 
       try{  const ran = Math.floor(1 + Math.random() * 10000);
             const response = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
@@ -23,15 +24,15 @@ function Body(){
    }catch(error){
       console.error("⚠️ You’ve hit the 60-requests/hour limit. Try again later.", error.message);
    }
-   }
-   async function searchProfile(user){
+   },[])
+   const searchProfile = useCallback(async(user)=>{
    try{ const response = await fetch(`https://api.github.com/users/${user}`)
       const data = await response.json();
       setProfile([data])
    } catch(error){
       console.error("User is not found !",error.message)
    }
-   }
+   },[user]);
 
 
 
@@ -43,14 +44,14 @@ function Body(){
    return (
        <div className="but">
        <input type="text" className="inpu" placeholder="search here" value={numberofProfile} onChange={(e)=>setnumberofProfile(e.target.value)}></input>
-       <button onClick={()=>searchProfile(numberofProfile)}>Search Profile</button>
+       <button onClick={()=>searchProfile(setuser(numberofProfile))}>Search Profile</button>
       <div className="profiles">
        {
         Profile.map((value)=>{ 
            return (<div key={value.id} className="cards">
               <img src={value.avatar_url}></img>
               <h2>{value.login}</h2>
-            <div className="followopt">illustrious-sfogliatella-e058dd
+            <div className="followopt">
                  <p>👥 Followers: {value.followers}</p>
                  <p>➡️ Following: {value.following}</p>
             </div>
