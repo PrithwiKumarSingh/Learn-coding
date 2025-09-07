@@ -81,35 +81,48 @@
 // const user = (data)=>{return console.log(" Hello "+data.name +"Your age is : "+data.age)};
 // user(data);
 
-let user1 = {
-    firstName: "Mr.",
-    middleName : "Prithwi",
-    lastName : "Kumar",
+// let user1 = {
+//     firstName: "Mr.",
+//     middleName : "Prithwi",
+//     lastName : "Kumar",
+//     age : 21,
+//     gender : "Male"
+// }
+// let user2 = {
+//     firstName: "Mrs.",
+//     middleName : "Anamika",
+//     lastName : "Singh",
+//     age : 22,
+//     gender : "Female"
+// }
+
+// const vote = (data)=>{
+//     if(data>=18){
+//         return " You Can Vote. ";
+//     }else{ return "You Can't Vote (underage)"}
+// }
+
+// const show = (data)=>{
+//         let res = vote(data.age);
+//     console.log(`Hello, ${data.firstName} ${data.middleName} ${data.lastName} 
+//                  Your age is ${data.age} & 
+//                  Your gender is ${data.gender}.
+//                  ${res}`)
+//     }
+// show(user1);
+// show(user2);
+
+
+// array in object in array you can create nesting more time doesn't matter how long 
+// for example 
+
+let arr = ["Harkirat", 21, {
+    name : "Prithiwi", 
     age : 21,
-    gender : "Male"
-}
-let user2 = {
-    firstName: "Mrs.",
-    middleName : "Anamika",
-    lastName : "Singh",
-    age : 22,
-    gender : "Female"
-}
+    cities : ["Motihari", " Dehradun", "Delhi", "Gujrat",{
+        country : "Nepal",
+        city : "Thori Gaon"
+    }]
+}];
 
-const vote = (data)=>{
-    if(data>=18){
-        return " You Can Vote. ";
-    }else{ return "You Can't Vote (underage)"}
-}
-
-const show = (data)=>{
-        let res = vote(data.age);
-    console.log(`Hello, ${data.firstName} ${data.middleName} ${data.lastName} 
-                 Your age is ${data.age} & 
-                 Your gender is ${data.gender}.
-                 ${res}`)
-    }
-show(user1);
-show(user2);
-
-
+console.log(arr[2].cities[4].city);
