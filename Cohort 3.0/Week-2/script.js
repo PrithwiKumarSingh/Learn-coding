@@ -39,22 +39,34 @@
 // console.log(content);
 
 
-function sum(a,b){
-    return a+b;
-}
-function Subtraction(a,b){
-    return a-b;
-}
-function multiply(a,b){
-    return a*b;
-}
-function divide(a,b){
-    return a/b;
+// function sum(a,b){
+//     return a+b;
+// }
+// function Subtraction(a,b){
+//     return a-b;
+// }
+// function multiply(a,b){
+//     return a*b;
+// }
+// function divide(a,b){
+//     return a/b;
+// }
+
+// function doOperation(a,b,op){
+//     return op(a,b);
+// }
+
+// let res = doOperation(4,2,multiply);
+// console.log(res);
+
+
+const fs = require('fs');
+function print(err, data){
+    if(err){
+        console.log("File is Not Found");
+    }else{console.log(data)}
 }
 
-function doOperation(a,b,op){
-    return op(a,b);
-}
-
-let res = doOperation(4,2,multiply);
-console.log(res);
+fs.readFile("adf.txt", "utf-8", print);
+// fs.readFile("b.txt", "utf-8", print);
+// console.log("End of Code")
