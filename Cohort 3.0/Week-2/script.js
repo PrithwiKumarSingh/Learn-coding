@@ -60,13 +60,22 @@
 // console.log(res);
 
 
-const fs = require('fs');
-function print(err, data){
-    if(err){
-        console.log("File is Not Found");
-    }else{console.log(data)}
-}
+// const fs = require('fs');
+// function print(err, data){
+//     if(err){
+//         console.log("File is Not Found");
+//     }else{console.log(data)}
+// }
 
-fs.readFile("adf.txt", "utf-8", print);
+// fs.readFile("adf.txt", "utf-8", print);
 // fs.readFile("b.txt", "utf-8", print);
 // console.log("End of Code")
+
+console.log("Start Code")
+
+ function timeout(){
+     console.log("Hello Prithwi");
+}
+
+setTimeout(timeout,5000);
+console.log("End The Code");
