@@ -83,3 +83,46 @@
 
 
 // Promises and async, awit
+
+
+class Rectangle {
+    constructor(width, height, color){
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+
+    area(){
+        const area = this.width*this.height;
+        return area;
+    }
+    
+    paint(){
+         console.log(`Painting with color ${this.color}`);
+    }
+}
+
+const rect = new Rectangle(2,4,'red');
+const area = rect.area();
+console.log(area);
+const paint = rect.paint();
+console.log(paint);
+
+
+
+const sum = (a,b)=>{return (this.a = a) + (this.b = b)};
+const res = sum(3,5);
+console.log(res);
+
+
+
+const rect1 = {
+    width: 2, 
+    height: 3, 
+    color:"red"
+}
+
+const areas = (rect)=>{ return rect.width * rect.height}
+
+const ans = new Rectangle(rect1.width, rect1.height, rect1.color);
+console.log(ans);
