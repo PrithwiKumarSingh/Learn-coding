@@ -71,11 +71,15 @@
 // fs.readFile("b.txt", "utf-8", print);
 // console.log("End of Code")
 
-console.log("Start Code")
+// console.log("Start Code")
 
- function timeout(){
-     console.log("Hello Prithwi");
-}
+//  function timeout(){
+//      console.log("Hello Prithwi");
+// }
 
-setTimeout(timeout,5000);
-console.log("End The Code");
+// setTimeout(timeout,5000);
+// console.log("End The Code");
+
+
+
+// Promises and async, awit
