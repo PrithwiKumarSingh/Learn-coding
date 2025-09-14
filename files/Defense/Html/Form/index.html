@@ -8,22 +8,32 @@
 <body>
     
     <form>
-        <label>Name : </label>
-        <input type="text" name="userName">
+        <label for="Name">Name : </label>
+        <input type="text" name="userName" id="Name">
 
         <br><br>
-        <label>Father Name : </label>
-        <input type="text" name="userFname">
+        <label for="fname">Father Name : </label>
+        <input type="text" name="userFname" id="fname">
 
         <br><br>
 
-        <label>Age : </label>
-        <input type="number" name="userAge">
+        <label for="Age">Age : </label>
+        <input type="number" name="userAge" id="Age">
 
         <br><br>
-        <label>Password : </label>
-        <input type="password" name="userPass">
+        <label for="password">Password : </label>
+        <input type="password" name="userPass" id="password">
 
+        <br><br>
+
+        <label for="Male">Male</label>
+        <input type="radio" name="gender" id="Male" value="male">
+
+        <label for="Female">Female</label>
+        <input type="radio" name="gender" id="Female" value="female">
+        
+        <label for="Other">Other</label>
+        <input type="radio" name="gender" id="Other" value="other">
         <br><br>
         <input type="submit">
     </form>
