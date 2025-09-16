@@ -1,0 +1,9 @@
+#gender{
+    display: flex;
+}
+.gen{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}

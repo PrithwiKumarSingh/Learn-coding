@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>University Registration Form </h1>
@@ -23,14 +24,20 @@
         <br><br>
 
         <p>Gender:</p>
-        <input type="radio" name="Gender" value="Male">
-        <label for="Male">Male</label>
-        <br>
-        <input type="radio" name="Gender" value="Female">
-        <label for="Female">Female</label>
-        <br>
-        <input type="radio" name="Gender" value="Other">
-        <label for="Female">Other</label>
+        <div id="gender">
+            <div class="male gen">
+                <label for="Male">Male</label>
+                <input type="radio" name="Gender" value="Male" id="Male">
+            </div>
+            <div class="female gen">
+                <label for="Female">Female</label>
+                <input type="radio" name="Gender" value="Female" id="Female">
+            </div>
+            <div class="other gen">
+                <label for="Other">Other</label>
+                <input type="radio" name="Gender" value="Other" id="Other">
+            </div>
+        </div>
 
         <p>Upload Your Photo:</p>
         <input type="file">
