@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#main{
+    background-color: yellow;
+    height: 200px;
+    width: 400px;
+    position: relative;
+    margin: 50px;
+}
+
+#first{
+    height: 80px;
+    width: 120px;
+    position: absolute;
+    background-color: #000ed2;
+    top: 0px;
+
+}
+#second{
+    height: 80px;
+    width: 240px;
+    position: absolute;
+    background-color: #000ed2;
+    right: 0px;
+}
+
+#third{
+    height: 80px;
+    width: 240px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000ed2;
+}
+#fourth{
+    height: 80px;
+    width: 120px;
+    position: absolute;
+    background-color: #000ed2;
+    bottom: 0px;
+}

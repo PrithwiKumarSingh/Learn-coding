@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main{
+    margin: 50px;
+    height: 300px;
+    width: 500px;
+    background-color: rgb(174, 18, 18);
+    position: relative;
+    border-radius: 10px;
+}
+
+.middle{
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 70px;
+    background-color: blue;
+}
+
+.circle{
+    position: absolute;
+    background-color: white;
+    height: 120px;
+    width: 120px;
+    top: 85px;
+    left: 170px;
+    border-radius: 50%;
+    z-index: 3;
+}

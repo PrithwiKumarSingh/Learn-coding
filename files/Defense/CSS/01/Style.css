@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+#main{
+    height: 300px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 50px;
+    border-radius: 10px;
+}
+#circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(182, 10, 10);
+}
