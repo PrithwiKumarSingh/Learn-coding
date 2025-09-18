@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(117, 108, 104);
+}
+
+.Container{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    height: 700px;
+    width: 700px;
+    border: 25px solid rgb(106, 39, 15);
+}
+.white{
+    background-color: white;
+}
+.Black{
+    background-color: black;
+}
