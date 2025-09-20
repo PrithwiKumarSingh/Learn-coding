@@ -26,7 +26,7 @@ int main(){
     //     cout<<" Not Divisible "<<endl;
     // }
 
-    
+
 
     // int num = 73;
 
@@ -39,8 +39,25 @@ int main(){
 
 
 
+    int num1, num2;
+    cout<<" Enter Num1 : ";
+    cin>>num1;
+    cout<<" Enter Num2 : ";
+    cin>>num2;
 
+    int Sum = num1 + num2;
+    cout<<" Sum of : "<<Sum<<endl;
 
+    int Sub = num1 - num2;
+    cout<<" Sub of : "<<Sub<<endl;
+
+    int Multiply = num1 * num2;
+    cout<<" Multiply of : "<<Multiply<<endl;
+
+    float Divide = float(num1) / float(num2);
+    cout<<" Divide of : "<<Divide<<endl;
+
+    
 
 
 
