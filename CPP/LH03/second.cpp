@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(){
+
+    // int cout = 10; 
+    // std::cout<<cout;
+
     // char ch = 'K';
 
     // if(ch == 'a' || ch == 'A')
@@ -39,27 +43,44 @@ int main(){
 
 
 
-    int num1, num2;
-    cout<<" Enter Num1 : ";
-    cin>>num1;
-    cout<<" Enter Num2 : ";
-    cin>>num2;
+    // int num1, num2;
+    // cout<<" Enter Num1 : ";
+    // cin>>num1;
+    // cout<<" Enter Num2 : ";
+    // cin>>num2;
 
-    int Sum = num1 + num2;
-    cout<<" Sum of : "<<Sum<<endl;
+    // int Sum = num1 + num2;
+    // cout<<" Sum of : "<<Sum<<endl;
 
-    int Sub = num1 - num2;
-    cout<<" Sub of : "<<Sub<<endl;
+    // int Sub = num1 - num2;
+    // cout<<" Sub of : "<<Sub<<endl;
 
-    int Multiply = num1 * num2;
-    cout<<" Multiply of : "<<Multiply<<endl;
+    // int Multiply = num1 * num2;
+    // cout<<" Multiply of : "<<Multiply<<endl;
 
-    float Divide = float(num1) / float(num2);
-    cout<<" Divide of : "<<Divide<<endl;
+    // float Divide = float(num1) / float(num2);
+    // cout<<" Divide of : "<<Divide<<endl;
 
+
+    // Leap Year Questions 
     
+    int year; 
+    cout<<"Enter a Year : ";
+    cin>>year;
 
+    // if((year%400==0) || ((year%4==0) && (year%100 != 0))){
+    //     cout<<year<< " is a Leap Year "<< endl;
+    // }else{ 
+    //     cout<<year<< " is not a Leap Year "<<endl;
+    // }
 
+    if(year%400 == 0){
+        cout<<year<< " is a Leap Year "<< endl;
+    }else if(year%4==0 && year%100 != 0){
+        cout<<year<< " is a Leap Year "<< endl;
+    }else{
+        cout<<year<< " is not a Leap Year "<< endl;
+    }
 
     return 0;
 
