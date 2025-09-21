@@ -64,9 +64,9 @@ int main(){
 
     // Leap Year Questions 
     
-    int year; 
-    cout<<"Enter a Year : ";
-    cin>>year;
+    // int year; 
+    // cout<<"Enter a Year : ";
+    // cin>>year;
 
     // if((year%400==0) || ((year%4==0) && (year%100 != 0))){
     //     cout<<year<< " is a Leap Year "<< endl;
@@ -74,13 +74,24 @@ int main(){
     //     cout<<year<< " is not a Leap Year "<<endl;
     // }
 
-    if(year%400 == 0){
-        cout<<year<< " is a Leap Year "<< endl;
-    }else if(year%4==0 && year%100 != 0){
-        cout<<year<< " is a Leap Year "<< endl;
-    }else{
-        cout<<year<< " is not a Leap Year "<< endl;
+    // if(year%400 == 0){
+    //     cout<<year<< " is a Leap Year "<< endl;
+    // }else if(year%4==0 && year%100 != 0){
+    //     cout<<year<< " is a Leap Year "<< endl;
+    // }else{
+    //     cout<<year<< " is not a Leap Year "<< endl;
+    // }
+
+    //Print all even number between 2 to 100
+
+    for(int i = 1; i<=100; i++){
+        if(i%2==0){
+            cout<<i<<endl;
+        }
     }
+    
+
+
 
     return 0;
 
