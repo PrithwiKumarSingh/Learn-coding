@@ -111,15 +111,15 @@ a b c d e
     
     */
 
-    int n = 5;
-    char ch = 'a';
-    for(int row=1; row<=n; row++){
-        for(int col=1; col<=row; col++){
-            cout<<char(ch+col-1)<<" ";
-        }
+    // int n = 5;
+    // char ch = 'a';
+    // for(int row=1; row<=n; row++){
+    //     for(int col=1; col<=row; col++){
+    //         cout<<char(ch+col-1)<<" ";
+    //     }
         
-        cout<<endl;
-    }
+    //     cout<<endl;
+    // }
 
 
 
