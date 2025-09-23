@@ -61,6 +61,7 @@ int main(){
         // }
 
 
+        // Pattern - 4
     /*
     
 a a a a a 
@@ -70,14 +71,33 @@ d d d d d
 e e e e e 
 
 */
-        int n = 5;
-        char ch = 'a';
-        for(int row=1; row<=n; row++){
-            for(int col=1; col<=n; col++ ){
-                cout<<ch<<" ";
-            }
-            ch++;
-            cout<<endl;
+        // int n = 5;
+        // char ch = 'a';
+        // for(int row=1; row<=n; row++){
+        //     for(int col=1; col<=n; col++ ){
+        //         cout<<ch<<" ";
+        //     }
+        //     ch++;
+        //     cout<<endl;
+        // }
+
+
+        // Pattern - 5
+
+    /*
+    a b c d e
+    f g h i j 
+    k l m n o
+    p q r s t
+    u v w x y 
+    */
+    int n = 5; 
+    char ch = 'a';
+    for(int row=1; row<=n; row++){
+        for(int col=1; col<=n; col++){
+            cout<<ch<<" ";
+            ch += 1;
         }
-    
+        cout<<endl;
+    }
 }
