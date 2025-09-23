@@ -11,15 +11,32 @@ int main(){
 21 22 23 24 25
 
 */
-    int n = 5;
-    int counter = 1; 
-    for(int row=1; row<=n; row++){
-        for(int col=1; col<=n; col++){
-            cout<<counter<<" ";
-            counter += 1; 
-        }
-        cout<<endl;
+    // int n = 5;
+    // int counter = 1; 
+    // for(int row=1; row<=n; row++){
+    //     for(int col=1; col<=n; col++){
+    //         cout<<counter<<" ";
+    //         counter += 1; 
+    //     }
+    //     cout<<endl;
+    // }
+
+    /*
+
+    *
+    * * 
+    * * *
+    * * * * 
+    * * * * * 
+    
+    */
+   int n = 5;
+   for(int row=1; row<=n; row++){
+    for(int col=1; col<=row; col++){
+        cout<<" * ";
     }
+    cout<<endl;
+   }
 
     return 0; 
     
