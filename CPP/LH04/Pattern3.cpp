@@ -91,13 +91,39 @@ e e e e e
     p q r s t
     u v w x y 
     */
-    int n = 5; 
+//     int n = 5; 
+//     char ch = 'a';
+//     for(int row=1; row<=n; row++){
+//         for(int col=1; col<=n; col++){
+//             cout<<ch<<" ";
+//             ch += 1;
+//         }
+//         cout<<endl;
+//     }
+
+
+    /*
+a 
+a b 
+a b c 
+a b c d 
+a b c d e 
+    
+    */
+
+    int n = 5;
     char ch = 'a';
     for(int row=1; row<=n; row++){
-        for(int col=1; col<=n; col++){
-            cout<<ch<<" ";
-            ch += 1;
+        for(int col=1; col<=row; col++){
+            cout<<char(ch+col-1)<<" ";
         }
+        
         cout<<endl;
     }
+
+
+
+
+
+    return 0;
 }
