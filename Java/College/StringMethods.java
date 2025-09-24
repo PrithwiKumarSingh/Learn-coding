@@ -33,53 +33,74 @@ public class StringMethods {
         // // }
         // System.out.println(name.charAt(5));
 
-        //   Q1. String Reverse 
-            String nam = "Prithwi";
+        // //   Q1. String Reverse 
+        //     String nam = "Prithwi";
 
-            for(int i=nam.length()-1;i>=0 ; i--){
-                System.out.print(nam.charAt(i));
-            }
-            System.out.println();
+        //     for(int i=nam.length()-1;i>=0 ; i--){
+        //         System.out.print(nam.charAt(i));
+        //     }
+        //     System.out.println();
         
             
-        //  Q2. Vowel or Consonent Count
+        // //  Q2. Vowel or Consonent Count
 
-        String name = "edUcatiOn";
-        name = name.toUpperCase();
-        int vowel = 0; 
-        int Consonent = 0;
+        // String name = "edUcatiOn";
+        // name = name.toUpperCase();
+        // int vowel = 0; 
+        // int Consonent = 0;
 
-        for(int i=0; i<name.length(); i++){
+        // for(int i=0; i<name.length(); i++){
 
-           char ch = name.charAt(i);
+        //    char ch = name.charAt(i);
            
 
-            if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
-                vowel++;
+        //     if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
+        //         vowel++;
+        //     }else{
+        //         Consonent++;
+        //     }
+        // }
+
+        // System.out.println("Vowel : "+vowel);
+        // System.out.println("Consonent : "+Consonent);
+
+
+
+        // // Q3.  count characters 
+
+        // String Word = new String("javajavaj");
+        // char ch = 'j';
+        // int counter = 0; 
+
+        // for(int i=0; i<Word.length(); i++){
+        //     // char chcount = Word.charAt(i);
+        //     if(Word.charAt(i) == 'j'){
+        //         counter++;
+        //     }
+        // }
+        // System.out.println(ch + " : "+counter);
+
+
+        // Q4. String check Palindrom or not 
+
+        String name = new String("maDam");
+        name = name.toUpperCase();
+        boolean pdom = false;
+        int n = name.length();
+
+        for(int i=0; i<n; i++){
+            if(name.charAt(i) == name.charAt(n-1-i)){
+                pdom = true;
             }else{
-                Consonent++;
+                pdom = false;
             }
         }
 
-        System.out.println("Vowel : "+vowel);
-        System.out.println("Consonent : "+Consonent);
-
-
-
-        // Q3.  count characters 
-
-        String Word = new String("javajavaj");
-        char ch = 'j';
-        int counter = 0; 
-
-        for(int i=0; i<Word.length(); i++){
-            // char chcount = Word.charAt(i);
-            if(Word.charAt(i) == 'j'){
-                counter++;
-            }
+        if(pdom == true){
+            System.out.println(name + " is palindrom.");
+        }else{
+            System.out.println(name+" is not palindrom");
         }
-        System.out.println(ch + " : "+counter);
-
 
     }
     
