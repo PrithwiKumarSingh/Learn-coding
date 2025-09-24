@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+        background-color: black;
+        display: flex;
+        justify-content: center;
+}
+.container{
+    background-color: rgba(255, 254, 254, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.214);
+    width: 60%;
+    margin: 20px;
+    /* padding: 10px; */
+    color: white;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+p{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.062);
+    animation-name: marque;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes marque {
+    from{
+        margin-left: 100%;
+    }
+    to{
+        margin-left: -100%;
+    }
+    
+}
