@@ -14,6 +14,14 @@ public class StringMethods {
         System.out.println(name.substring(0, 7));
         System.out.println(name.substring(8, 13));
 
+        // .charAt()
+        // for(int i=0; i<name.length(); i++){
+        //     System.out.println(name.charAt(i));
+        // }
+        System.out.println(name.charAt(5));
+
+        //
+
     }
     
 }
