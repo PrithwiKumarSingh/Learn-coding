@@ -41,8 +41,28 @@ public class StringMethods {
             }
             System.out.println();
         
-    
+            
+        //  Q2. Vowel or Consonent Count
 
+        String name = "edUcatiOn";
+        name = name.toUpperCase();
+        int vowel = 0; 
+        int Consonent = 0;
+
+        for(int i=0; i<name.length(); i++){
+
+           char ch = name.charAt(i);
+           
+
+            if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
+                vowel++;
+            }else{
+                Consonent++;
+            }
+        }
+
+        System.out.println("Vowel : "+vowel);
+        System.out.println("Consonent : "+Consonent);
 
     }
     
