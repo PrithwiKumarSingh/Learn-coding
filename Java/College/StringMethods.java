@@ -64,6 +64,23 @@ public class StringMethods {
         System.out.println("Vowel : "+vowel);
         System.out.println("Consonent : "+Consonent);
 
+
+
+        // Q3.  count characters 
+
+        String Word = new String("javajavaj");
+        char ch = 'j';
+        int counter = 0; 
+
+        for(int i=0; i<Word.length(); i++){
+            // char chcount = Word.charAt(i);
+            if(Word.charAt(i) == 'j'){
+                counter++;
+            }
+        }
+        System.out.println(ch + " : "+counter);
+
+
     }
     
 }
