@@ -3,8 +3,21 @@
 public class StringMethods {
 
     public static void main(String[] args){
-        String name = "Prithwi Kumar";
+        String name1 = "Prithwi Kumar";
+        String name2 = "Prithwi Kumar";
+        String name = new String("Prithwi Kumar");
         System.out.println(name);
+
+        // .equals() --> compare variable inside content 
+        System.out.println(name1.equals(name2));
+        System.out.println(name2.equals(name));
+
+        // ==
+        System.out.println(name1 == name2);
+        System.out.println(name2 == name1);
+        System.out.println(name2 == name);
+        System.out.println(name1 == name);
+
 
         // length
         System.out.println(name.length());
