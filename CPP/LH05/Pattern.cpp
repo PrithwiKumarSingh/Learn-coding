@@ -19,4 +19,61 @@ int main(){
     //     cout<<endl;
     // }
 
+
+
+
+
+
+//     * 
+//    * * 
+//   * * * 
+//  * * * * 
+// * * * * * 
+    // int total_row = 5;  
+    // for(int row = 1; row<=total_row; row++){
+    //     for(int sp = 1; sp<=total_row-row; sp++){
+    //         cout<<" ";
+    //     }
+    //     for(int col=1; col<=row; col++){
+    //         cout<<"* ";
+    //     }
+    //     cout<<endl;
+    // }
+
+
+
+// * * * * * 
+//  * * * * 
+//   * * * 
+//    * * 
+//     * 
+
+    int total_row = 5;
+        for(int row = 1; row<=total_row-1; row++){
+        for(int sp = 1; sp<=total_row-row; sp++){
+            cout<<" ";
+        }
+        for(int col=1; col<=row; col++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    } 
+    for(int row=1; row<=total_row; row++){
+        //space
+        for(int sp=1; sp<=row-1; sp++){
+            cout<<" ";
+        }
+        for(int col=1; col<=total_row-row+1; col++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+
+
+
+
+
+
+    return 0; 
+
 }
