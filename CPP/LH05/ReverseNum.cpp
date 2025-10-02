@@ -5,11 +5,12 @@ int main(){
     cout<<"Enter Your Number : ";
     cin>>Num;
     cout<<"Reverse Numeber : ";
+    int sum = 0; 
 
     while(Num){
         int rem = Num%10;
-        cout<<rem;
+        sum = sum*10+rem;
         Num /= 10; 
     }
-    cout<<endl;
+    cout<<sum<<endl;
 }

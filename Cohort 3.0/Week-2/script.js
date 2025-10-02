@@ -85,44 +85,86 @@
 // Promises and async, awit
 
 
-class Rectangle {
-    constructor(width, height, color){
-        this.width = width;
-        this.height = height;
-        this.color = color;
-    }
+// class Rectangle {
+//     constructor(width, height, color){
+//         this.width = width;
+//         this.height = height;
+//         this.color = color;
+//     }
 
-    area(){
-        const area = this.width*this.height;
-        return area;
-    }
+//     area(){
+//         const area = this.width*this.height;
+//         return area;
+//     }
     
-    paint(){
-         console.log(`Painting with color ${this.color}`);
-    }
+//     paint(){
+//          console.log(`Painting with color ${this.color}`);
+//     }
+// }
+
+// const rect = new Rectangle(2,4,'red');
+// const area = rect.area();
+// console.log(area);
+// const paint = rect.paint();
+// console.log(paint);
+
+
+
+// const sum = (a,b)=>{return (this.a = a) + (this.b = b)};
+// const res = sum(3,5);
+// console.log(res);
+
+
+
+// const rect1 = {
+//     width: 2, 
+//     height: 3, 
+//     color:"red"
+// }
+
+// const areas = (rect)=>{ return rect.width * rect.height}
+
+// const ans = new Rectangle(rect1.width, rect1.height, rect1.color);
+// console.log(ans);
+
+
+
+// Give UTC-0 time but india time zone UTC-5:30+
+// const date = new Date();
+// console.log(date.getDay());
+// console.log(date.getHours());
+// console.log(date.toISOString());
+
+
+// const map = new Map();
+// map.set('name','Alice');
+// map.set('age', 32);
+// console.log(map.get('name'));
+// console.log(map.get('age'));
+
+
+// function setTimeoutPromisified(ms){
+//     let p = new Promise(resolve => setTimeout(resolve,ms));
+//     return p;
+// }
+
+// function callback(){
+//     console.log("3 seconds have passed");
+// }
+
+// setTimeoutPromisified(3000).then(callback);
+
+
+// function waitFor3S(resolve){
+//     setTimeout(resolve, 3000);
+// }
+// function main(){
+//     console.log("main is called");
+// }
+
+// waitFor3S(main);
+
+
+const random = (resolve)=>{
+        setTimeout(resolve,5000);
 }
-
-const rect = new Rectangle(2,4,'red');
-const area = rect.area();
-console.log(area);
-const paint = rect.paint();
-console.log(paint);
-
-
-
-const sum = (a,b)=>{return (this.a = a) + (this.b = b)};
-const res = sum(3,5);
-console.log(res);
-
-
-
-const rect1 = {
-    width: 2, 
-    height: 3, 
-    color:"red"
-}
-
-const areas = (rect)=>{ return rect.width * rect.height}
-
-const ans = new Rectangle(rect1.width, rect1.height, rect1.color);
-console.log(ans);

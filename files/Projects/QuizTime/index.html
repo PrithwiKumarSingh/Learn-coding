@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main " id="first-page">
+            <h1>Quiz Time!</h1>
+            <p>Test your knowledge with these fun questions</p>
+            <button class="Start-btn">Start Quiz</button>
+        </div>
+
+        <div class="second screen " id="second-page">
+            <h3 id="question">What is the capital of Frace ?</h3>
+            <div class="QuestionInfo">
+            <p>Question <span class="startScore">1</span> of <span>5</span></p>
+            <p>Score: <span id="score">0</span></p>
+            </div>
+            <div class="answere-container">
+                <!-- answere put on js -->
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+
+        <div class="result-screen screen">
+            <h2>Quiz Result</h2>
+            <div class="Score-board">
+                <p>You scored <span id="YourScore">3</span> out of <span>5</span></p>
+                <h3 id="resultmsg">Good effort! Keep learning</h3>
+            </div>
+
+            <button class="restart-btn">Restart Quiz</button>
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

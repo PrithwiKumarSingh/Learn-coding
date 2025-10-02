@@ -116,13 +116,83 @@
 // array in object in array you can create nesting more time doesn't matter how long 
 // for example 
 
-let arr = ["Harkirat", 21, {
-    name : "Prithiwi", 
-    age : 21,
-    cities : ["Motihari", " Dehradun", "Delhi", "Gujrat",{
-        country : "Nepal",
-        city : "Thori Gaon"
-    }]
-}];
+// let arr = ["Harkirat", 21, {
+//     name : "Prithiwi", 
+//     age : 21,
+//     cities : ["Motihari", " Dehradun", "Delhi", "Gujrat",{
+//         country : "Nepal",
+//         city : "Thori Gaon"
+//     }]
+// }];
 
-console.log(arr[2].cities[4].city);
+// console.log(arr[2].cities[4].city);
+
+
+
+// Assignment
+// Create a function that takes an array of objects as input,
+// and returns the users whose age > 18 and are male
+
+ const user = [{
+    Name : 'Prithwi',
+    age : 21,
+    gender : "Male",
+    address : {
+        village : "Gokhula",
+        city : "Motihari",
+        currentLocation : "Dehradun"
+        }
+     }, {
+            Name : 'Harkirat',
+            age : 29,
+            gender : "Male",
+            address : {
+            village : "Bombay",
+            city : "Banglore",
+            currentLocation : "Delhi"
+            }
+     },{
+            Name : 'Vivek',
+            age : 9,
+            gender : "Male",
+            address : {
+            village : "Gokhula",
+            city : "motihari",
+            currentLocation : "Bihar"
+            }
+     },
+     {
+            Name : 'Ankit',
+            age : 12,
+            gender : "Male",
+            address : {
+            village : "Vinaynagar",
+            city : "Faridabad",
+            currentLocation : "haryana"
+            }
+     }
+]
+
+const solve = (data)=>{
+    let arr = [];
+    for(let i=0; i<data.length; i++){
+        if(data[i].age > 18 && data[i].gender === "Male"){
+            arr.push(data[i]);
+        }
+    }
+    return arr;
+}
+let result = solve(user);
+
+console.log(result);
+
+// console.log(arr[0].Name)
+
+// const ageChecker = (data)=>{
+//     for(let i=0; i<data.length; i++){
+//         if((data[i].age) >= 18 && data[i].gender == "Male"){
+//             console.log(`Hello, ${data[i].Name} age : ${data[i].age} address : ${data[i].address.currentLocation}`)
+//         }
+//     }
+// }
+// ageChecker(arr);

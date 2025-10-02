@@ -36,24 +36,55 @@
 // })
 
 
-let Promise1 = new Promise((resolve,reject)=>{
-    setTimeout(resolve,2000,"First");
-})
-let Promise2 = new Promise((resolve,reject)=>{
-    setTimeout(resolve,2000,"second");
-})
-let Promise3 = new Promise((resolve,reject)=>{
-    setTimeout(resolve,2000,"third");
-})
-let Promise4 = new Promise((resolve,reject)=>{
-    setTimeout(resolve,2000,"forth");
-})
+// let Promise1 = new Promise((resolve,reject)=>{
+//     setTimeout(resolve,2000,"First");
+// })
+// let Promise2 = new Promise((resolve,reject)=>{
+//     setTimeout(resolve,2000,"second");
+// })
+// let Promise3 = new Promise((resolve,reject)=>{
+//     setTimeout(resolve,2000,"third");
+// })
+// let Promise4 = new Promise((resolve,reject)=>{
+//     setTimeout(resolve,2000,"forth");
+// })
 
-Promise.all([Promise1, Promise2, Promise3, Promise4]).then((massage)=>{
-    // console.log(massage);
-    for(let i=0; i<massage.length; i++){
-        console.log(massage[i]);
+// Promise.all([Promise1, Promise2, Promise3, Promise4]).then((massage)=>{
+//     // console.log(massage);
+//     for(let i=0; i<massage.length; i++){
+//         console.log(massage[i]);
+//     }
+// }).catch((error)=>{
+//     console.log("Error : " + error);
+// })
+
+
+
+
+
+
+// console.log("Start");
+
+// const promise1 = new Promise((resolve, reject)=>{
+//     console.log("massasge");
+//     reject("Hello");
+// }).then((massage)=>{
+//     console.log(massage);
+// }).catch((error)=>{
+//     console.log("Error : "+error);
+// })
+
+
+const promise2 = new Promise((resolve, reject)=>{
+    let success = true; 
+    if(success){
+        resolve("Promise Resolve Ho gya");
+    }else{
+        reject("Promise Reject Ho Gya");
     }
-}).catch((error)=>{
-    console.log("Error : " + error);
-})
+}).then((massage)=>{
+    console.log("First : ", massage);
+    resolve("resolve Ho hurry Up!");
+}).then((massage)=>{
+    console.log("Second : "+ massage);
+}).catch( error => console.log("Error : "+error));

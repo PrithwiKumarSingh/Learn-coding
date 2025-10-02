@@ -92,12 +92,17 @@ int main(){
 
     // Print Sum of n number 
 
-    int num = 100;
-    int sum = 0; 
-    for(int i=1; i<=num; i++){
-        sum += i;
-    }
-    cout<<sum<<endl;
+    // int num = 100;
+    // int sum = 0; 
+    // for(int i=1; i<=num; i++){
+    //     sum += i;
+    // }
+    // cout<<sum<<endl;
+
+    int num = 0;
+
+    // cout<< ++num<<endl;
+    cout<<num++ <<endl;
     
 
 
