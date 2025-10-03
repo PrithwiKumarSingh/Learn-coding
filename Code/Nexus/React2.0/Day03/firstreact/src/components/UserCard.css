@@ -1,0 +1,20 @@
+.user-details{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(11, 56, 70);
+    color: white;
+    gap: 20px;
+    font-size: 20px;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
