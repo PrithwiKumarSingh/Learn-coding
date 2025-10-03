@@ -1,0 +1,26 @@
+.Card{
+    background-color: white;
+    padding: 50px; 
+    text-align : center; 
+    border-radius: 10px;
+}
+
+button{
+    padding: 5px 10px;
+    background-color: rgb(42, 42, 106);
+    color: white; 
+    font-size: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: all 0.5s ease ;
+    margin-left: 10px;
+
+}
+button:hover{
+    background-color: rgba(6, 6, 137, 0.7);
+    transform: scale(1.1);
+}
+
+h3{
+    font-size: 30px;
+}
