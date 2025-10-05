@@ -1,0 +1,109 @@
+.card{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    color : #999;
+}
+
+input{
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(224, 222, 222);
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid rgba(49, 49, 255, 0.71);
+}
+
+button{
+    width: 100%;
+    padding: 15px 15px;
+    font-size: 20px;
+    color: white;
+    background-color: #0271D3;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.813);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+button:hover{
+    /* box-shadow: 0px 0px 10px 0px black; */
+    transform: scale(1.02);
+}
+#direct-login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-icon{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.input-icon img{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(68%) sepia(6%) saturate(10%) hue-rotate(359deg) brightness(89%) contrast(90%);
+}
+
+#direct-login{
+    margin-top: 30px;
+}
+
+#facebook{
+    background-color: #4266B2;
+    position: relative;
+    font-weight: 500;
+}
+#facebook img {
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(222deg) brightness(103%) contrast(101%);
+}
+
+#google{
+    background-color: white;
+    border: 1px solid wheat;
+    color: #999;
+    position: relative;
+    font-weight: 500;
+}
+
+#google img {
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+h1{
+    color: rgba(29, 29, 29, 0.833);
+}
+
+#Loginbtn{
+    background-color: transparent;
+    height: 0;
+    width: 0;
+    color: blue;
+    cursor: pointer;
+    background-color: red;
+}
