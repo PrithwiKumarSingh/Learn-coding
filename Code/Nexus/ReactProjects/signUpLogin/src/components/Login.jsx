@@ -21,12 +21,18 @@ function Login({switchToSignUp}){
             <p>Already have an account? <a onClick={()=>switchToSignUp()} href="#">Signup</a></p>
 
             <div id='direct-login'>
-                <button id='facebook'>Login with Facebook 
+                <a target='_blank' href="https://facebook.com">
+                    <button id='facebook'>Login with Facebook 
                     <img src="https://www.svgrepo.com/show/506477/facebook.svg" alt="" />
                 </button>
-                <button id='google'>Login with Google
+                </a>
+
+                <a target="_blank" href="https://google.com">
+                        <button id='google'>Login with Google 
                     <img src="   https://cdn-icons-png.flaticon.com/512/281/281764.png " alt="" />
                 </button>
+                </a>
+
             </div>
         </div>
         </>
