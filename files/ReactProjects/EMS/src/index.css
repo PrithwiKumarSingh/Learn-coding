@@ -9,4 +9,9 @@ body{
 
 #tasklist::-webkit-scrollbar{
     display: none;
+} 
+
+#createTaskScroll::-webkit-scrollbar{
+  display: none;
+
 }
