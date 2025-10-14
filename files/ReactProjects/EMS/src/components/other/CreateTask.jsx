@@ -24,7 +24,7 @@ const CreateTask = () => {
             <div className='w-[50%] '>
                 <div>
                     <h3 className='text-xl font-medium pb-1'>Discription</h3>
-                    <textarea className='w-[100%] bg-transparent border-2 border-white rounded-sm  !text-black' name="" id="" cols="30" rows="10"></textarea>
+                    <textarea className='w-[100%] bg-transparent border-2 border-white rounded-sm font-medium p-2  ' name="" id="" cols="30" rows="10"></textarea>
                 </div>
                     <button className='mt-5 bg-emerald-500 w-[100%] py-5 cursor-pointer px-5 rounded-sm text-xl font-medium '>Create Task</button>
             </div>
