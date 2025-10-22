@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 100vh;
+    background-color: #D9DFEC;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* height: 500px; */
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: white;
+    
+    
+}
+
+.left{
+    background-color: #7493ED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+
+}
+.left p{
+    font-weight: 800;
+    color: white;
+}
+ h2{
+    font-size: 45px;
+    font-weight: 900;
+    color: white;
+ }
+
+.left button {
+    padding: 8px 29px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Right  */
+.right{
+    background-color: white;
+}
+.right form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding:50px 30px;
+    text-align: center;
+    
+}
+
+#Username{
+    position: relative;
+}
+#Username img{
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+
+}
+#password{
+    position: relative;
+    
+}
+#password img{
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+input{
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 15px 15px;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    color: rgb(28, 27, 27);
+    border: none;
+    outline: none;
+}
+
+form a{
+    text-decoration: none;
+}
+
+form button{
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #7294ED;
+    border-radius: 10px;
+    border: 1px solid #7294ED;
+    color: white;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.social img{
+    height: 25px;
+    width: 25px;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(65, 62, 62);
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+img{
+    filter: brightness(0) saturate(100%) invert(21%) sepia(2%) saturate(299%) hue-rotate(83deg) brightness(92%) contrast(90%);
+}
