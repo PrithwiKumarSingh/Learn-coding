@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Header = () => {
   return (
-    <div className='bg-[#ff5200] font-sans'>
+    <div className='bg-[#ff5200] font-sans h-[95vh]'>
         
         <div className='flex container mx-auto justify-between py-8'>
             <div className='w-40 h-12 '>
@@ -26,11 +27,15 @@ const Header = () => {
             </div>
         </div>
 
-        <div className='flex container mx-auto'>
-            <a target='_blank' href="https://www.swiggy.com/restaurants"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/ec86a309-9b06-48e2-9adc-35753f06bc0a_Food3BU.png" alt="" /></a>
+        <div className='flex container mx-auto '>
+            <Link to="/restaurant">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/ec86a309-9b06-48e2-9adc-35753f06bc0a_Food3BU.png" alt="" />
+            </Link>
+            
             <a target='_blank' href="https://www.swiggy.com/instamart?entryId=1234&entryName=mainTileEntry4&v=1"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b5c57bbf-df54-4dad-95d1-62e3a7a8424d_IM3BU.png" alt="" /></a>
             <a target='_blank' href="https://www.swiggy.com/dineout"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b6d9b7ab-91c7-4f72-9bf2-fcd4ceec3537_DO3BU.png" alt="" /></a>
         </div>
+        <div className='h-4 w-[80%] container mx-auto bg-white '></div>
     </div>
   )
 }
