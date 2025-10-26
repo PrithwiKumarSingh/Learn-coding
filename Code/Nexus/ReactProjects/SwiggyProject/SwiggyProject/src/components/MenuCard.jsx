@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import RestInfo from './RestInfo'
 
-const MenuCard = ({menuItem}) => {
+const MenuCard = ({menuItem,foodselect}) => {
   
   const [IsOpen, setIsOpen] = useState(true);
 
@@ -12,7 +12,7 @@ const MenuCard = ({menuItem}) => {
         <p className='text-3xl font-bold '>{menuItem.title}</p>
         <div>
           {
-            menuItem?.categories?.map((items) => <MenuCard key={items?.title} menuItem={items} > </MenuCard>)
+            menuItem?.categories?.map((items) => <MenuCard key={items?.title} menuItem={items} foodselect={foodselect} > </MenuCard>)
           }
         </div>
       </div>
@@ -28,6 +28,41 @@ const MenuCard = ({menuItem}) => {
       </div>
       <div className='h-5 bg-gray-200 mt-4 mb-4'></div>
     </div>
+    )
+  }
+
+
+  if(foodselect==="Veg"){
+    return(
+    <div className='w-ful mt-10'>
+          <div className=' flex justify-between w-full'>
+          <p className='text-3xl font-bold '>{menuItem.title}</p>
+          <button className='cursor-pointer font-normal mr-10 text-3xl' onClick={()=> setIsOpen(!IsOpen)} >{IsOpen ? "˄" : "˅"} </button>
+          </div>
+        <div>
+            {
+                menuItem?.itemCards?.filter((food)=> "isVeg" in food?.card?.info).map((items) => <RestInfo key={items?.card?.info?.id} restData={items?.card?.info} ></RestInfo>) 
+            }
+        </div>
+    </div>
+    )
+  }
+
+
+  if(foodselect==="non-Veg"){
+    return(
+          <div className='w-ful mt-10'>
+          <div className=' flex justify-between w-full'>
+          <p className='text-3xl font-bold '>{menuItem.title}</p>
+          <button className='cursor-pointer font-normal mr-10 text-3xl' onClick={()=> setIsOpen(!IsOpen)} >{IsOpen ? "˄" : "˅"} </button>
+          </div>
+        <div>
+            {
+                menuItem?.itemCards?.filter((food)=> !("isVeg" in food?.card?.info)).map((items) => <RestInfo key={items?.card?.info?.id} restData={items?.card?.info} ></RestInfo>) 
+            }
+        </div>
+    </div>
+
     )
   }
 
