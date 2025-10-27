@@ -17,9 +17,10 @@ const SearchCard = () => {
                 const data = await response.json(); 
                 const tempData = data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
                 const filterData = tempData.filter((item)=> 'title' in item?.card?.card);
-                const itemFilter = filterData.map((items)=> items?.card?.card?.itemCards)
-                console.log(itemFilter);
-                setRestData(filterData);
+                const itemFilter = filterData.map((items)=> items?.card?.card?.itemCards ? items?.card?.card?.itemCards : items?.card?.card?.categories)
+                const itemData = itemFilter.map((item)=> item?.card?.info)
+                console.log(itemData.name)
+                setRestData(itemFilter);
             } catch (err) {
                 console.error("Error fetching data:", err);
             }
@@ -43,10 +44,10 @@ const SearchCard = () => {
         </Link>
         <img className='h-8 absolute bottom-4 right-5 '  src="https://www.svgrepo.com/show/532555/search.svg" alt="" />
         </div>  
-{/* 
-        <div>
+
+        {/* <div>
             {
-                <RestInfo></RestInfo>
+                restData.map((item)=><RestInfo key={item?.card?.info?.description} restData={item?.card?.info}></RestInfo>)
             }
         </div> */}
     </div>

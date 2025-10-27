@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiMenu, FiX } from "react-icons/fi";
 import {FaGithub,FaLinkedin} from 'react-icons/fa';
 
 const Navbar = ()=>{
+
+    const [active, setActive] = useState(false);
 
     const MenuItem = [
         {id:"menu", label:"About"},
@@ -15,7 +17,7 @@ const Navbar = ()=>{
 
     return(
         <nav className='bg-transparent'>
-            <div className='text-white py-5 flex justify-center items-center'>
+            <div className='text-white py-5 flex justify-between items-center'>
 
                 {/* Logo  */}
                 <div className='text-lg font-semibold cursor-pointer'>
@@ -27,10 +29,12 @@ const Navbar = ()=>{
                 </div>
 
                 {/* Desktop Menu  */}
-                <ul className=''>
+                <ul className='md:flex space-x-8 text-gray-300'>
                     {MenuItem.map((items)=>(
-                        <li key={items.id} className=''>
-                            <button>{items.label}</button>
+                        <li key={items.id} className={` cursor-pointer hover:text-[#8245ec]  ${
+                            active ? items.id :" "
+                        }`}>
+                            <button onClick={()=>{}} className='cursor-pointer'>{items.label}</button>
                         </li>
                     ))}
                 </ul>

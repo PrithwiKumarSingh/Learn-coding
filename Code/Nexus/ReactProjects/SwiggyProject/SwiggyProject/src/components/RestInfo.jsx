@@ -4,7 +4,7 @@ const RestInfo = ({restData}) => {
     <div>
     <div className="flex w-full justify-between mt-8">
         <div className="w-[70%]">
-            <p className="text-2xl mb-1 font-semibold  text-gray-700" >{restData.name}</p>
+            <p className="text-2xl mb-1 font-semibold  text-gray-700" >{restData?.name}</p>
             <p className="text-xl font-semibold mb-2 ">{"₹"+("defaultPrice" in restData ? restData?.defaultPrice/100 : restData?.price/100)}</p>
             <div className="flex gap-1">
                    <svg
