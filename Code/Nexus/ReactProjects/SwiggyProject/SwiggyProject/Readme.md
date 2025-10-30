@@ -1,0 +1,1 @@
+This is a Swiggy clone project with handling live Swiggy API and manage to create a simple swiggy fronted UI using React + Tailwind. 
