@@ -16,7 +16,7 @@ public class Calculator {
         System.out.print("Enter Your Operator : ");
         String  operator = sc.next();
 
-        if(operator.equals("+")){
+   /* if(operator.equals("+")){
              System.out.println("Result : " + (firstNum + secondNum));
         }else if(operator.equals("-")){
             System.out.println("Result : " + (firstNum - secondNum));
@@ -28,7 +28,23 @@ public class Calculator {
             System.out.println("Result : " + (firstNum % secondNum));
         } else{
             System.out.println("Invalid Operator! use (+, -, *, /, %)");
+        }      */
+
+        switch (operator){
+            case "+": System.out.println("Result : " + (firstNum + secondNum));
+                break;
+            case "-" : System.out.println("Result : " + (firstNum - secondNum));
+                break; 
+            case "*" : System.out.println("Result : " + (firstNum * secondNum));
+                break; 
+            case "/" : System.out.println("Result : " + (firstNum / secondNum));
+                break; 
+            case "%" : System.out.println("Result : " + (firstNum % secondNum));
+                break;
+        
+            default: System.out.println("Invalid Operator! use ( +, -, *, /, % )");
         }
+
     }
     
 }
