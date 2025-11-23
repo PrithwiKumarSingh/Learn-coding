@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 500px;
+    background-color: aqua;
+    padding: 20px;
+}
+.result{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 4rem;
+    padding-left: 10px;
+    
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: black;
+}
+
+.button{
+    width: 100%;
+    height: 50px;
+    margin: 20px;
+}
+.btn{
+    width: 40%;
+    height: 50px;
+    margin: 20px;
+}
+.clear{
+    width: 40%; 
+    height: 50px;
+    margin: 20px;
+}
