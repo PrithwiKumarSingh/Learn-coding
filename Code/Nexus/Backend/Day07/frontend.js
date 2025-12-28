@@ -1,6 +1,5 @@
 const response2 = await fetch("https://api.example.com/data")
 
-
 const response = await fetch("https://api.example.com/data",{
     method: 'POST',
     headers:{

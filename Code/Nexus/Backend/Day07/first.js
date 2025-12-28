@@ -1,27 +1,27 @@
 const express = require('express');
-
 const app = express();
+
 
 // app.use("/user", (req,res)=>{
 //     res.send("Hello Coder Army");
 // })
 
-
-// parsing karni padti hai 
 app.use(express.json());
 
-app.get("/user", (req,res)=>{
-    res.send({name:"Prithwi"});
+app.get("/user",(req,res)=>{
+    res.send({name:"Prithwi",
+        current:"Dehradun"
+    });
 })
-
 
 app.post("/user",(req,res)=>{
-    // console.log("Data saved Sucessfully");
-    console.log(req.body);
-    res.send("Data saved Sucessfully");
-
+    console.log("Data Save Successfully");
+    console.log(typeof req.body.age);
+    res.send("Data Save Successfully");
 })
 
-app.listen(4000, (()=>{
-    console.log("Server Started Port 4000");
-}))
+
+
+app.listen(4000, ()=>{
+    console.log("Listening port 4000")
+})
