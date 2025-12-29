@@ -11,6 +11,7 @@ app.get("/user", (req,res,next)=>{
   next();
 })
 app.get("/user",(req,res)=>{
+  console.log("Third")
   res.send("I third response");
 })
 app.listen(3000, (req,res)=>{
