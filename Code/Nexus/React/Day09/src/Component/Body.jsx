@@ -25,6 +25,9 @@ function Body(){
       console.error("⚠️ You’ve hit the 60-requests/hour limit. Try again later.", error.message);
    }
    },[])
+
+
+   
    const searchProfile = useCallback(async(user)=>{
    try{ const response = await fetch(`https://api.github.com/users/${user}`)
       const data = await response.json();

@@ -1,30 +1,49 @@
-class Student {
+class Main{
+    public static void BubbleSort(int arr[]){
+        int n = arr.length;
+        for(int i=0; i<n-1; i++){
+            for(int j=0; j<n-1-i; j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j]; 
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
 
-    String name; 
-    int age; 
-
-    Student(){
-        this("unknown",21);
-        System.out.println("Fist Constructor");
+        for(int i=0; i<n; i++){
+            System.out.print(" " + arr[i]);
+        }
     }
 
-    Student(String name, int age){
-        this.name = name;
-        this.age = age;
-        System.out.println("2nd Constructor");
+    public static void Selection(int arr[] ){
+        int n = arr.length;
+        for(int i=0; i<n-1; i++){
+            int index = i; 
+            for(int j=i+1; j<n; j++){
+                if(arr[j] < arr[index]){
+                    index = j;
+                }
+            }
+        int temp = arr[i]; 
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+
+
+        for(int i=0; i<n; i++){
+            System.out.print(" " + arr[i]);
+        }
+        System.out.println();
+
     }
-   void show(){
-        System.out.println(name+" - "+ age);
+
+
+
+    public static void main(String[] args){
+        int arr[] = {4,7,3,2,6};
+       // BubbleSort(arr);
+        Selection(arr);
+        
     }
-
-}
-
-public class Main {
-    public static void main(String[] args) {
-            Student sc = new Student();
-            Student sc1 = new Student("Ram", 21);
-            sc1.show();
-    }
-
-
 }

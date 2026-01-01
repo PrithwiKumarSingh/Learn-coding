@@ -24,7 +24,7 @@ class Animals{
 }
 
 // Derived class or Child class
-class Fish extends Animals{
+class mammal extends Animals{
   int fins;
 
   void swim(){
@@ -35,3 +35,8 @@ class Fish extends Animals{
     System.out.println("Animal string : " + color + " Fish Fins : " + fins);
   }
 }
+
+// Deriverd class (Multi level Inheritance)
+class Dog extends Mammal{
+  int leg;
+} 

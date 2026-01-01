@@ -1,4 +1,5 @@
-const data = {
+const dataObject = {
+  id:1000029006,
   name : "Prithwi",
   age : 21, 
   address: {
@@ -10,4 +11,7 @@ const data = {
 }
 
 
-console.log(data.address.pincode);
+console.log(dataObject.address.pincode);
+
+console.log(dataObject.id);
+
