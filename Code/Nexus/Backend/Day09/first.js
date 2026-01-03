@@ -18,15 +18,44 @@ const foodItem = [
 
 const CartItem = []; // cart items
 app.post("/user/:id", (req,res)=>{
+  try{
   const item = foodItem.find(item => item.id === parseInt(req.params.id));
-  CartItem.push(item);
-  res.send("Add to cart successfully");
-
-  
+  if(item){
+    CartItem.push(item);
+    res.status(200).send("Add to cart Successfully");
+  }
+  else{
+    res.send("Item is Out of Stock !");
+  }}
+  catch(err){
+    res.send("Error : "+ err);
+  }
 })
 
+app.delete("/user/:id",(req,res)=>{
+  try{``
+  const foodItem = CartItem.findIndex(item=> item.id === parseInt(req.params.id));
+  if(foodItem!=-1){
+  CartItem.splice(foodItem,1);
+    res.status(200).send("Food Item deleted Successfully");
+  }
+  else{
+    res.send("Food Item not Found");
+  }}
+  catch(err){
+    res.send("Error : "+err);
+  }
+})
 app.get("/user", (req,res)=>{
-  res.status(200).send(CartItem);
+  try{
+    if(CartItem.length == 0){
+      res.status(200).send("Cart is Empty");
+    }else{
+      res.status(200).send(CartItem);
+    }
+  }catch(err){
+    res.send("Error : "+ err);
+  }
 })
 
 app.use("/admin", auth);
@@ -49,6 +78,7 @@ app.delete("/admin/:id", (req, res)=>{
 })
 
 app.patch("/admin", (req,res)=>{
+  try{
   const foodItm = foodItem.find(item => item.id === req.body.id);
   console.log(foodItm);
 
@@ -60,6 +90,9 @@ app.patch("/admin", (req,res)=>{
     foodItm.price = req.body.price;
 
   res.status(200).send("Data Update Successfully");
+  }catch(err){
+    res.send("Error : " + err);
+  }
 })
 
 
