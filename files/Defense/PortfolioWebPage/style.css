@@ -288,6 +288,10 @@ nav a{
     margin-bottom: 20px;
     text-align: justify;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .card span{
     color:  #FFBF00;
