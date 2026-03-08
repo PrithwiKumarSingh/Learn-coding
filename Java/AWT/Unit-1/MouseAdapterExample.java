@@ -11,15 +11,15 @@ public class MouseAdapterExample extends MouseAdapter {
                 f.dispose();
             }
          });
-         
-        f.addMouseListener(this);
+
+        f.addMouseMotionListener(this);
 
         f.setSize(500,500);
         f.setLayout(null);
         f.setVisible(true);
     }
 
-    public void mouseClicked(MouseEvent e){
+    public void mouseDragged(MouseEvent e){
         Graphics g = f.getGraphics();
         g.setColor(Color.BLUE);
         g.fillOval(e.getX(),e.getY(), 30,30);
