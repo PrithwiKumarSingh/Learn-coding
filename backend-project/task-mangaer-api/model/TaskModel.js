@@ -3,9 +3,14 @@ import mongoose from "mongoose"
 const schema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        minLength: 5, 
+        maxLength: 30
     },
-    description: String,
+    description: {
+        type: String,
+        maxLength:300,
+    },
     status: {
         type: String,
         enum: ["pending", "completed"],
