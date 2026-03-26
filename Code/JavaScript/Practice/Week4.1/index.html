@@ -1,0 +1,23 @@
+<html>
+    <script>
+
+        function sum(){
+           const first = document.getElementById("first").value;
+           const second  = document.getElementById("second").value;
+           const third = parseInt(first) + parseInt(second);
+           const element = document.getElementById('result').innerHTML = "Result : " + third;
+
+        }
+
+    </script>
+    <body >
+        <input id="first" type="text" placeholder="first">
+        <br>
+        <br>
+        <input id="second" type="text" placeholder="second">
+        <br>
+        <br>
+        <button onclick="sum()">Click me</button>
+        <h1 id="result"> </h1>
+    </body>
+</html>
