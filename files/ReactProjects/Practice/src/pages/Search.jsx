@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { MdOutlineClear } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const Search = () => {
@@ -132,7 +133,7 @@ const items = [
         <input value={search} onChange={(e)=> setSearch(e.target.value)}  type="text" className=' w-100 px-4 py-4 outline rounded-2xl focus:bg-gray-100 hover:bg-gray-100' placeholder='Example: Apple'/>
         <div className='flex gap-4 mt-4 justify-center '>
             <button onClick={()=>setFilter("") } className='px-4 py-2 border text-xl hover:bg-gray-100 rounded-xl cursor-pointer'>Clear</button>
-            <button onClick={()=>setFilter("animals") } className='px-4 py-2 border text-xl hover:bg-gray-100 rounded-xl cursor-pointer'>Animals</button>
+            <button onClick={()=>setFilteapr("animals") } className='px-4 py-2 border text-xl hover:bg-gray-100 rounded-xl cursor-pointer'>Animals</button>
             <button onClick={()=>setFilter("flowers")} className='px-4 py-2 border text-xl hover:bg-gray-100 rounded-xl cursor-pointer'>Flowers</button>
             <button onClick={()=>setFilter("fruits")} className='px-4 py-2 border text-xl hover:bg-gray-100 rounded-xl cursor-pointer'>Fruits</button>
         </div>
@@ -144,11 +145,22 @@ const items = [
         </div>
         
         <div className='font-bold grid grid-cols-4 gap-3 text-center mt-5'>
+            <AnimatePresence>
             {
 
-            filtered.map((item, index)=><p className='px-4 py-2 border rounded ' key={index}>{item.name}</p>)
+            filtered.map((item, index)=><motion.p 
+            className='px-4 py-2 border rounded  hover:bg-gray-100  ' 
+            key={index}
+            initial={{opacity:0, scaleX:0.95}}
+            animate={{opacity:1, scaleX:1}}
+
+            exit={{ opacity: 0, scaleX: 0.95 }}
+            transition={{duration:0.3}}
+            
+            >{item.name}</motion.p>)
             
             }
+            </AnimatePresence>
 
         </div>
 
