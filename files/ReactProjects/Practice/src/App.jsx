@@ -1,9 +1,13 @@
 import React from 'react'
 import Search from './pages/Search'
+import Todo from './pages/Todo'
 
 const App = () => {
   return (
-    <Search />
+    <>
+    <Todo/>
+    {/* <Search /> */}
+    </>
   )
 }
 
