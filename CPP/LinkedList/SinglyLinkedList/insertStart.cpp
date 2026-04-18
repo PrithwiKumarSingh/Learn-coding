@@ -21,6 +21,8 @@ int main(){
     Node *Head;
     Head = NULL;
 
+    // Insert element in begining of the LL
+
     for(int i=0; i<arr.size(); i++){
         if(Head==NULL){
         Head = new Node(arr[i]);
@@ -33,9 +35,16 @@ int main(){
         }
     }
 
-    cout<<Head->data<<endl;
-    cout<<Head->next<<endl;
-    cout<<Head<<endl;
+    // Print the linked list
+
+    Node *temp = Head;
+
+    while(temp != NULL){
+        cout<< temp->data <<" ";
+        temp = temp->next;
+    }
+
+   
 
     return 0;
 }
