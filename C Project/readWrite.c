@@ -2,29 +2,27 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
+#include <stdlib.h>
 
-// Semaphores
-sem_t mutex;   // protects readCount
-sem_t wrt;     // writer lock
-sem_t queue;   // fairness (prevents starvation)
+sem_t mutex;
+sem_t wrt;
+sem_t queue;
 
 int readCount = 0;
 
-// 🔹 Reader Function
 void* reader(void* arg) {
     int id = *((int*)arg);
 
-    sem_wait(&queue);      // wait in queue
+    sem_wait(&queue);
     sem_wait(&mutex);
 
     readCount++;
     if (readCount == 1)
-        sem_wait(&wrt);    // first reader blocks writer
+        sem_wait(&wrt);
 
     sem_post(&mutex);
     sem_post(&queue);
 
-    // 🔍 Reading Section
     printf("Reader %d is reading\n", id);
     sleep(1);
 
@@ -32,21 +30,19 @@ void* reader(void* arg) {
     readCount--;
 
     if (readCount == 0)
-        sem_post(&wrt);    // last reader releases writer
+        sem_post(&wrt);
 
     sem_post(&mutex);
 
     return NULL;
 }
 
-// 🔹 Writer Function
 void* writer(void* arg) {
     int id = *((int*)arg);
 
-    sem_wait(&queue);   // wait in queue
-    sem_wait(&wrt);     // exclusive access
+    sem_wait(&queue);
+    sem_wait(&wrt);
 
-    // ✏️ Writing Section
     printf("Writer %d is writing\n", id);
     sleep(2);
 
@@ -57,29 +53,38 @@ void* writer(void* arg) {
 }
 
 int main() {
-    int n_readers = 3, n_writers = 2;
+    int n_readers, n_writers;
 
-    pthread_t r[n_readers], w[n_writers];
-    int r_id[n_readers], w_id[n_writers];
+    printf("Enter number of readers: ");
+    scanf("%d", &n_readers);
 
-    // Initialize semaphores
+
+
+    printf("Enter number of writers: ");
+    scanf("%d", &n_writers);
+
+    
+
+    pthread_t *r = (pthread_t*)malloc(n_readers * sizeof(pthread_t));
+    pthread_t *w = (pthread_t*)malloc(n_writers * sizeof(pthread_t));
+
+    int *r_id = (int*)malloc(n_readers * sizeof(int));
+    int *w_id = (int*)malloc(n_writers * sizeof(int));
+
     sem_init(&mutex, 0, 1);
     sem_init(&wrt, 0, 1);
     sem_init(&queue, 0, 1);
 
-    // Create reader threads
     for (int i = 0; i < n_readers; i++) {
         r_id[i] = i + 1;
         pthread_create(&r[i], NULL, reader, &r_id[i]);
     }
 
-    // Create writer threads
     for (int i = 0; i < n_writers; i++) {
         w_id[i] = i + 1;
         pthread_create(&w[i], NULL, writer, &w_id[i]);
     }
 
-    // Join threads
     for (int i = 0; i < n_readers; i++) {
         pthread_join(r[i], NULL);
     }
@@ -88,10 +93,14 @@ int main() {
         pthread_join(w[i], NULL);
     }
 
-    // Destroy semaphores
     sem_destroy(&mutex);
     sem_destroy(&wrt);
     sem_destroy(&queue);
+
+    free(r);
+    free(w);
+    free(r_id);
+    free(w_id);
 
     printf("\nExecution completed.\n");
 
