@@ -6,33 +6,9 @@ struct Node {
     struct Node * next;
 };
 
-struct Node* insertAtEnd(struct Node *head, int data){
-    struct Node * newNode = (struct Node * )malloc(sizeof(struct Node));
 
-    if(!newNode){
-        printf("Memory Not Allocated");
-        return head;
-    }
-    
-    newNode->data = data;
-    newNode->next = NULL;
 
-    if(head == NULL){
-        return newNode;
-    }
-    
-    struct Node *ptr = head;
-    while(ptr->next != NULL){
-        ptr = ptr->next;
-    }
-
-    ptr->next = newNode;
-
-    return head;
-
-}
-
-void printing(struct Node * head){
+void displayList(struct Node *head){
     struct Node * temp = head;
 
     while(temp != NULL){
@@ -75,6 +51,18 @@ struct Node* createSL(struct Node *head, int n){
     return head;
 }
 
+int countNodes(struct Node *head){
+    struct Node *ptr = head;
+    int count = 0;
+    while(ptr != NULL){
+        ptr = ptr->next;
+        count++;
+    }
+
+    return count;
+}
+
+// Insert Node (start, index , end);
 struct Node * insertAtStart(struct Node*head, int data){
 
     struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -124,7 +112,38 @@ struct Node * insertAtIndex(struct Node*head, int data, int index){
     return head;
 }
 
+struct Node* insertAtEnd(struct Node *head, int data){
+    struct Node * newNode = (struct Node * )malloc(sizeof(struct Node));
+
+    if(!newNode){
+        printf("Memory Not Allocated");
+        return head;
+    }
+    
+    newNode->data = data;
+    newNode->next = NULL;
+
+    if(head == NULL){
+        return newNode;
+    }
+    
+    struct Node *ptr = head;
+    while(ptr->next != NULL){
+        ptr = ptr->next;
+    }
+
+    ptr->next = newNode;
+
+    return head;
+
+}
+
+// Delete Node (start, index, end);
+
 struct Node * deleteAtStart(struct Node*head){
+    if(head == NULL)
+        return NULL;
+
     struct Node *ptr = head;
     head = head->next;
     free(ptr);
@@ -135,9 +154,79 @@ struct Node * deleteAtStart(struct Node*head){
 
 struct Node * deleteAtEnd(struct Node * head)
 {
-    struct = newNode
+    if(head == NULL){
+        return NULL;
+    }
+
+    if(head->next == NULL){
+        free(head);
+        return NULL;
+    }
+
+
+    struct Node * prev = head;
+    struct Node * last = head->next;
+
+    while(last->next != NULL){
+        prev = last;
+        last = last->next;
+    }
+
+    prev->next = NULL;
+    free(last);
+    
+    return head;
 };
 
+struct Node * deleteAtIndex(struct Node*head, int index){
+    if(head == NULL){
+        return NULL;
+    }
+
+    if(index==0){
+        return deleteAtStart(head);
+    }
+
+    struct Node * prev = head;
+
+    for(int i=0; i<index-1; i++){
+        if(prev->next == NULL){
+            printf("Index is Out of Bound");
+            return head;
+        }
+
+        prev = prev->next;
+    }
+
+    struct Node * curr = prev->next;
+
+    if(curr==NULL){
+        printf("Index is Out of Bound");
+        return head;
+    }
+
+    prev->next = curr->next;
+    free(curr);
+
+    return head;
+}
+
+// Search Element 
+
+int searchElement(struct Node *head, int key){
+    struct Node * ptr = head;
+    int count = 0;
+    while(ptr!=NULL){
+        count++;
+        if(ptr->data == key){
+            return count;
+        }
+
+        ptr = ptr->next;
+    }
+
+    return -1;
+}
 
 int main(){
 
@@ -154,8 +243,18 @@ int main(){
 
     head = insertAtIndex(head,78, 6);
     head = deleteAtStart(head);
+    head = deleteAtEnd(head);
 
-    printing(head);
+    displayList(head);
+    int count = countNodes(head);
+    printf("Count of Nodes : %d\n",count);
+
+    int index = searchElement(head,78);
+    if(index > 0){
+        printf("Found on Node : %d\n",index);
+    }else{
+        printf("Not Found in Nodes\n");
+    }
 
     return 0;
 }
