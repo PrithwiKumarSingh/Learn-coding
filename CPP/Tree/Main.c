@@ -7,6 +7,7 @@ struct Node {
     
 };
 
+// Creation 
 struct Node * create(){
     int val;
     scanf("%d", &val);
