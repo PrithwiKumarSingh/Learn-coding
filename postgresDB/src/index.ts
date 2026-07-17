@@ -59,6 +59,50 @@ app.post("/signin", async (req,res)=>{
 })
 
 
+// Bad way to get metadata about user
+app.get("/metadata", async(req,res)=>{
+    const id = req.query.id;
+    console.log("HELLO : " ,id);
+    const query1 = `SELECT username,email FROM users WHERE id=$1`
+    const query2 = `SELECT city,state,country,pincode, createdat FROM address WHERE userId=$1`
+    try{
+      
+      const response = await pgClient.query(query1,[id]);
+      const response2 = await pgClient.query(query2,[id]);
+
+      res.json({
+        user : response.rows[0],
+        address : response2.rows[0]
+      })
+    }catch(err){
+      console.log(err);
+      res.json({
+        Error: err
+      })
+    }
+})
+
+
+// Better way to get metadata about user using join 
+app.get("/better-metadata",async (req,res)=>{
+  const id = req.query.id;
+  const joinQuery = `SELECT users.id, users.username, users.email, address.userId, address.city, address.country,
+                      address.state, address.pincode FROM users JOIN address ON users.id = address.userId 
+                        WHERE users.id=$1;`
+  try{
+    const response = await pgClient.query(joinQuery,[id]);
+    res.json({
+      response : response.rows[0],
+      length : response.rows.length
+    })
+  }catch(e){
+    console.log(e);
+    res.json({
+      Error : e
+    })
+  }
+})
+
   app.listen(3000,()=>{
     console.log("Server started on http://localhost:3000")
   })
