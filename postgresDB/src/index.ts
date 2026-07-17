@@ -24,12 +24,28 @@ app.post("/signin", async (req,res)=>{
   const username = req.body.username;
   const password  = req.body.password; 
   const email = req.body.email;
+
+  const city = req.body.city; 
+  const country = req.body.country;
+  const state = req.body.country;
+  const pincode = req.body.pincode;
+
+    const addressInsertQuery = `INSERT INTO address(city, country, state, pincode, userId) VALUES ($1, $2, $3, $4, $5)`
+    const InsertQuery = `INSERT INTO users (username, password, email) VALUES ($1, $2, $3) RETURNING id;`
+
+
   
   try{
-    const InsertQuery = `INSERT INTO users (username, password, email) VALUES ($1, $2, $3);`
-    console.log(InsertQuery);
+
+    await pgClient.query("BEGIN;");
     const response = await pgClient.query(InsertQuery, [username, password, email])
-    console.log(response);
+    const userId = response.rows[0].id;
+    console.log("user added");
+    await new Promise(x=>setTimeout(x,10*1000))
+    console.log("address Added")
+    const responseAddressQuery = await pgClient.query(addressInsertQuery,[city, country, state, pincode, userId]);
+    await pgClient.query("COMMIT;");
+
     res.json({
       message : "You have Signed up"
     })
