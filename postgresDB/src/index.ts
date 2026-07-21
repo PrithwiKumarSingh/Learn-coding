@@ -17,8 +17,8 @@ app.use(express.json());
 const pgClient = new Client(
   "postgresql://neondb_owner:npg_IP3x7LREpbWA@ep-lucky-cake-aorxhkg9-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
 )
-pgClient.connect();
 
+pgClient.connect();
 
 app.post("/signin", async (req,res)=>{
   const username = req.body.username;
@@ -65,8 +65,8 @@ app.get("/metadata", async(req,res)=>{
     console.log("HELLO : " ,id);
     const query1 = `SELECT username,email FROM users WHERE id=$1`
     const query2 = `SELECT city,state,country,pincode, createdat FROM address WHERE userId=$1`
+
     try{
-      
       const response = await pgClient.query(query1,[id]);
       const response2 = await pgClient.query(query2,[id]);
 
@@ -91,6 +91,7 @@ app.get("/better-metadata",async (req,res)=>{
                         WHERE users.id=$1;`
   try{
     const response = await pgClient.query(joinQuery,[id]);
+
     res.json({
       response : response.rows[0],
       length : response.rows.length
