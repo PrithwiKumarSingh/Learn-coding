@@ -4,9 +4,9 @@ import "dotenv/config"
 
 const connectionString = `${process.env.DATABASE_URL}`
 
-const adapter = new PrismaPg({connectionString});
+const adapter = new PrismaPg({ connectionString });
 
-export const client = new PrismaClient({adapter});
+export const client = new PrismaClient({ adapter });
 
 
 
