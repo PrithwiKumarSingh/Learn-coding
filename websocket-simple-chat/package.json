@@ -18,6 +18,7 @@
   },
   "type": "module",
   "dependencies": {
+    "ioredis": "^6.0.0",
     "ws": "^8.22.2"
   }
 }
